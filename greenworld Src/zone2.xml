@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<settings>
+  <zoneinfo
+    minLevel = "0"
+    maxLevel = "4"
+    tileSet = "2"
+    width = "2560"
+    height = "2560"
+    id="2"
+    />
+
+  <name>The Crypt</name>
+
+  <zoneNext id = "2" />
+  <zoneNext id = "0" />
+
+  <exits size="1" />
+  <!--- x = width/64-->
+  <exit x="0" y="3" zoneId="3" spawnX="-698" spawnY="637" keyId="1"/>
+
+
+  <!-- Spawns Randomly -->
+ 
+
+  <monsters amount = "7" />
+  <!--Because I'm Lazy-->
+  <!-- <monster id = "1" min="1" max="20" xp="20" lv="1" hp="40" tc="1" x="0" y="0"/>-->
+  <monster id = "6" min="1" max="1" xp="120" lv="7" hp="230" tc="4" x="55" y="55" bossId="1"/>
+
+  <!-- Spawns specificly -->
+  <objects32 size="1" />
+
+
+  <objects64 size="1" />
+  <!--<object64 type="0" x="104" y="30"/>-->
+</settings>

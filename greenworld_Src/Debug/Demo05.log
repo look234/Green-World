@@ -1,0 +1,117 @@
+﻿Build started 12/15/2010 1:25:17 AM.
+     1>Project "C:\Users\Max\Desktop\formerege\freecandy1\gameupdate\Demo05.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Debug\Demo05.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo- /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D D3D_DEBUG_INFO /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTCc /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Objman.cpp
+         Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 16.00.30319.01 for 80x86
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         cl /c /ZI /nologo- /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D D3D_DEBUG_INFO /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTCc /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Objman.cpp
+     1>cl : Command line warning D9035: option 'nologo-' has been deprecated and will be removed in a future release
+         
+         Objman.cpp
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\sprite.h(26): warning C4324: 'C3DSprite' : structure was padded due to __declspec(align())
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(99): warning C4189: 'exitInfo' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(331): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(487): warning C4189: 'inAnotherObject' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(532): warning C4189: 'inAnotherObject' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(647): warning C4189: 'temp' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(749): warning C4065: switch statement contains 'default' but no 'case' labels
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(846): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(861): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(1233): warning C4189: 'healthBarsToDraw' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(1504): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(1515): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(1527): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(1539): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(1988): warning C4189: 'yspeed' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(1987): warning C4189: 'xspeed' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2158): warning C4100: 'index' : unreferenced formal parameter
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2198): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2396): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2397): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2678): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2686): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2693): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2607): warning C4100: 'mLevel' : unreferenced formal parameter
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2617): warning C4189: 'itemsThatMatch' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2765): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2770): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2736): warning C4189: 'itemsThatMatch' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(2843): warning C4189: 'objStack' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3129): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3129): warning C4309: '=' : truncation of constant value
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3130): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3130): warning C4309: '=' : truncation of constant value
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3131): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3131): warning C4309: '=' : truncation of constant value
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3430): warning C4189: 'testString' : local variable is initialized but not referenced
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3495): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3738): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3739): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3823): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3829): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3835): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\max\desktop\formerege\freecandy1\gameupdate\objman.cpp(3919): warning C4100: 'wait' : unreferenced formal parameter
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/Demo05.exe" /INCREMENTAL /NOLOGO D3dx9.lib d3d9.lib ws2_32.lib winmm.lib dsound.lib dinput8.lib dxguid.lib dxerr.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:".\Debug\Demo05.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/Demo05.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\Demo05.lib" /MACHINE:X86 .\Debug\Demo05.exe.embed.manifest.res
+         .\Debug/abort.obj
+         .\Debug/Ai.obj
+         .\Debug/Barrier.obj
+         .\Debug/Crow.obj
+         .\Debug/debug.obj
+         .\Debug/flameGuy.obj
+         .\Debug/flameGuy2.obj
+         .\Debug/gamerenderer.obj
+         .\Debug/Homing.obj
+         .\Debug/ImageFileNameList.obj
+         .\Debug/Input.obj
+         .\Debug/IPMgr.obj
+         .\Debug/item.obj
+         .\Debug/lootList.obj
+         .\Debug/Main.obj
+         .\Debug/Monster.obj
+         .\Debug/Monster2.obj
+         .\Debug/Object.obj
+         .\Debug/Objman.obj
+         .\Debug/Random.obj
+         .\Debug/renderer.obj
+         .\Debug/roundMan.obj
+         .\Debug/roundMan2.obj
+         .\Debug/Sound.obj
+         .\Debug/Sprite.obj
+         .\Debug/SpriteMan.obj
+         .\Debug/Text.obj
+         .\Debug/Timer.obj
+         .\Debug/tinystr.obj
+         .\Debug/tinyxml.obj
+         .\Debug/tinyxmlerror.obj
+         .\Debug/tinyxmlparser.obj
+         .\Debug/Tornado.obj /MACHINE:I386 
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\Demo05.exe.embed.manifest" /manifest .\Debug\Demo05.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         Demo05.vcxproj -> C:\Users\Max\Desktop\formerege\freecandy1\gameupdate\.\Debug\Demo05.exe
+       FinalizeBuildStatus:
+         Deleting file ".\Debug\Demo05.unsuccessfulbuild".
+         Touching ".\Debug\Demo05.lastbuildstate".
+     1>Done Building Project "C:\Users\Max\Desktop\formerege\freecandy1\gameupdate\Demo05.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.42

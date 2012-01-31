@@ -1,0 +1,133 @@
+/// \file defines.h
+/// Essential defines.
+/// Copyright Ian Parberry, 2004.
+/// Last updated July 12, 2010.
+
+#pragma once
+
+#include "d3dx9.h"
+
+/// Billboard vertex structure. 
+/// Custom vertex format for representing a vanilla billboard object. Consists 
+/// of position, texture coordinates, and flexible vertex format.
+
+struct BILLBOARDVERTEX{ 
+	D3DXVECTOR3 p; ///< Position.
+	float tu,tv; ///< Texture coordinates.
+	static const DWORD FVF; ///< Flexible vertex format.
+};
+
+/// Game object types.
+/// Types of game object that can appear in the game. Note: NUM_SPRITES 
+/// must be last.
+
+enum ObjectType{
+	//Hero
+	LINK_OBJECT, LINKATK_OBJECT,
+	NPC_OBJECT,
+	QUESTNPC_OBJECT,
+	SHOPNPC_OBJECT,
+	INNNPC_OBJECT,
+	SIGNPOST_OBJECT,
+
+	//HEALTH_PIECE,
+
+	//UI
+	HEALTH_OBJECT,
+	MANA_OBJECT,
+	HEALTHBOX_OBJECT,
+
+	HEALTH_FRAME,
+	HEALTH_PIECEMOB,
+	HEALTH_FRAMEMOB,
+
+	HURT_OBJECT,
+
+	//Monsters
+	CROW_OBJECT, EXPLODINGCROW_OBJECT, DEADCROW_OBJECT,
+	MONSTER_OBJECT, EXPLODINGMONSTER_OBJECT, DEADMONSTER_OBJECT,
+	MONSTER2_OBJECT, EXPLODINGMONSTER2_OBJECT, DEADMONSTER2_OBJECT,
+	FLAMEGUY_OBJECT, EXPLODINGFLAMEGUY_OBJECT, DEADFLAMEGUY_OBJECT,
+	FLAMEGUY2_OBJECT, EXPLODINGFLAMEGUY2_OBJECT, DEADFLAMEGUY2_OBJECT,
+	ROUNDMAN_OBJECT, EXPLODINGROUNDMAN_OBJECT, DEADROUNDMAN_OBJECT,
+	ROUNDMAN2_OBJECT, EXPLODINGROUNDMAN2_OBJECT, DEADROUNDMAN2_OBJECT,
+	//Spells
+		FIREBALL_OBJECT, TORNADO_OBJECT, BARRIER_OBJECT, LIGHTNING_OBJECT,
+	//Enemy Attacks
+	ENEMYFIREBALL_OBJECT,
+	ENEMYHOMING_OBJECT,
+
+	//Items
+	LOOT_OBJECT,
+	LOOT_OBJECTSHOW,
+	INVENTORY_OBJECT,
+	MENU_OBJECT,
+	ITEMSMENU_OBJECT,SPELLSMENU_OBJECT,OPTIONSMENU_OBJECT,
+	POINTER_OBJECT,
+	TEXTBOX_OBJECT,
+	DEADTEXT_OBJECT,
+	//Static Objects
+	TREE_OBJECT, TREE2_OBJECT, TREE3_OBJECT, 
+	ROCK_OBJECT, 
+	HOUSE_OBJECT,
+	TALK_OBJECT,
+	ALPHA_OBJECT,
+	ITEMCURSOR_OBJECT,
+
+
+	//Tiles
+	FOREST1_OBJECT,
+	GRASS1_OBJECT,
+	GRASS2_OBJECT,
+	DUNGEON1_OBJECT, DUNGEON2_OBJECT, DUNGEON3_OBJECT, DUNGEON4_OBJECT, DUNGEON5_OBJECT, DUNGEON6_OBJECT,
+	DUNGEON1COCKBLOCK,
+	DESERT1_OBJECT, DESERT2_OBJECT,
+	WALL1_OBJECT,
+	WALL2_OBJECT,
+	EXIT1_OBJECT,
+	EXIT2_OBJECT,
+	FLOWER1_OBJECT,
+	CAVE1_OBJECT,
+	//Weather
+	NIGHT_OBJECT,
+	//House
+		//type 1
+	HOUSET1P1_OBJECT,
+	HOUSET1P2_OBJECT,
+	HOUSET1P3_OBJECT,
+	//Environment
+	PLANT1_OBJECT,
+
+	//Blank Object
+	NULL_OBJECT,
+
+	//Inventory Objects
+	TREASURE_OBJECT,
+	TREASUREOPEN_OBJECT,
+	GOLD1_OBJECT,
+	STICK1_OBJECT,
+	POTION1_OBJECT, //Healing
+	POTION2_OBJECT, //Mana
+	POTION3_OBJECT, //Speed
+	KEY1_OBJECT, //Key1
+
+	//Equipment
+	SWORD_OBJECT,
+
+	//Map Objects
+	MINIWALL,
+	MINIEXIT,
+	MINIPLAYER,
+
+	//Other
+	DUMMY_OBJECT,
+    //Dont move this!!!
+	//or a thousand angry kittens will spew demonic fire-rainbows from their eyes into your soul!
+	NUM_SPRITES
+};
+
+struct zoneInformation{
+const char* fileName;
+char* zoneName;
+int exitType;
+};

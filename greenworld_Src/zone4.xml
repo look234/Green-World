@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<settings>
+  <zoneinfo
+    minLevel = "0"
+    maxLevel = "4"
+    tileSet = "3"
+    width = "3200"
+    height = "5120"
+    id="3"
+    />
+
+  <name>The Burning Lands</name>
+
+  <zoneNext id = "2" />
+  <zoneNext id = "0" />
+
+  <exits size="2" />
+  <!--- x = width/64-->
+  <exit x="5" y="0" zoneId="3" spawnX="-1000" spawnY="821"/>
+
+  <houses size="1" />
+  <house x="561" y="-1690" zoneId="2" spawnX="-698" spawnY="437"/>
+
+  <!-- Spawns Randomly -->
+  <rocks id="1" min="30" max="50" />
+
+  <monsters amount = "5" />
+  <!--Because I'm Lazy-->
+  <monster id = "1" min="6" max="9" xp="90" lv="5" hp="160" tc="3" x="0" y="0"/>
+  <monster id = "2" min="3" max="5" xp="100" lv="6" hp="180" tc="3" x="0" y="0"/>
+  <monster id = "1" min="6" max="7" xp="90" lv="5" hp="160" tc="3" x="0" y="0"/>
+  <monster id = "2" min="5" max="5" xp="100" lv="6" hp="180" tc="3" x="0" y="0"/>
+  <monster id = "3" min="4" max="7" xp="90" lv="5" hp="160" tc="3" x="0" y="0"/>
+  <monster id = "3" min="4" max="7" xp="100" lv="6" hp="180" tc="3" x="0" y="0"/>
+  <monster id = "5" min="4" max="7" xp="90" lv="5" hp="160" tc="3" x="0" y="0"/>
+  <monster id = "5" min="4" max="7" xp="100" lv="6" hp="180" tc="3" x="0" y="0"/>
+  <monster id = "7" min="1" max="4" xp="0" lv="5" hp="1" tc="3" x="0" y="0"/>
+
+  <!-- Spawns specificly -->
+  <objects32 size="1" />
+  <!-- <object32 type="1" x="-500" y="2700" /> -->
+
+  <objects64 size="1" />
+  <!--<object64 type="0" x="104" y="30"/>-->
+</settings>

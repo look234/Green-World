@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<settings>
+  <zoneinfo 
+    minLevel = "0"
+    maxLevel = "4"
+    tileSet = "1"
+    width = "3520"
+    height = "4800"
+    id="1"
+    />
+
+  <name>The Green Lands</name>
+
+  <zoneNext id = "2" />
+  <zoneNext id = "0" />
+
+  <exits size="1" />
+  <!--- x = width/64-->
+   <exit x="0" y="4" zoneId="3" spawnX="-761" spawnY="-972"/>
+  <!--  <exit x="0" y="3" zoneId="2" spawnX="1" spawnY="1"/>
+    <exit x="12" y="0" zoneId="5" spawnX="1" spawnY="1"/>-->
+
+  <houses size="0" />
+   <!-- <house x="300" y="75" zoneId="2" spawnX="-698" spawnY="437"/> -->
+
+  <!-- Spawns Randomly -->
+  <plants id="0" min="30" max="50" />
+  <rocks id="0" min="30" max="50" />
+
+  <monsters amount = "5" /> <!--Because I'm Lazy-->
+  <monster id = "0" min="4" max="7" xp="40" lv="1" hp="40" tc="1" x="0" y="0"/>
+  <monster id = "0" min="4" max="7" xp="45" lv="2" hp="50" tc="1" x="0" y="0"/>
+  <monster id = "2" min="6" max="8" xp="40" lv="1" hp="40" tc="1" x="0" y="0"/>
+  <monster id = "2" min="6" max="8" xp="45" lv="2" hp="50" tc="1" x="0" y="0"/>
+  <monster id = "7" min="1" max="4" xp="0" lv="2" hp="1" tc="1" x="0" y="0"/>
+  <!-- <monster id = "3" min="5" max="15" xp="50" lv="2" hp="50" tc="1" x="0" y="0"/>
+  <monster id = "4" min="5" max="15" xp="30" lv="2" hp="50" tc="1" x="0" y="0"/>
+  <monster id = "5" min="5" max="15" xp="30" lv="2" hp="50" tc="1" x="0" y="0"/>
+  <monster id = "7" min="1" max="4" xp="0" lv="2" hp="1" tc="1" x="0" y="0"/>-->
+
+  <!-- Spawns specificly -->
+  <objects32 size="2" />
+ <!-- <object32 type="1" x="-500" y="2700" /> -->
+  <object32 type="2" x="0" y="0" />
+  <object32 type="2" x="40" y="40" />
+  <object32 type="2" x="50" y="50" />
+  <object32 type="2" x="60" y="60" />
+  <object32 type="2" x="70" y="50" />
+  <object32 type="2" x="80" y="40" />
+
+  <objects64 size="1" />
+  <!--<object64 type="0" x="104" y="30"/>-->
+</settings>

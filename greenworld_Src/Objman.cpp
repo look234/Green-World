@@ -314,7 +314,7 @@ void CObjectManager::createZone(int zId){
 	g_xmlDocumentZone.LoadFile();
 	g_xmlSettingsZone = g_xmlDocumentZone.FirstChildElement("settings");
 
-	/*
+	
 	if(g_xmlSettingsZone){
 
 		
@@ -722,7 +722,7 @@ void CObjectManager::createZone(int zId){
 
   if(!loadedSaved)
 	 loadSavedGame();
-	*/
+	
   createUi();
   healthBox();
   healthBar();
@@ -3566,7 +3566,7 @@ void CObjectManager::createUi()
 
 void CObjectManager::healthBar(){
 
-	drawMiniMap();
+	//drawMiniMap();
 
 	D3DXVECTOR3 v;
 		v.x = m_pPlayerObject->m_structLocation.x-434;

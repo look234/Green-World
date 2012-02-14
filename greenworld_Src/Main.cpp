@@ -148,7 +148,7 @@ void InitXMLSettings(){
     ABORT("Cannot find <settings> tag in %s.", g_xmlFileName);
 } //InitXMLSettings
 
-void PlayMovie(char *filename){
+/*void PlayMovie(char *filename){
   //create movie window
   g_MCIHand = MCIWndCreate(g_HwndApp, g_hInstance,
     MCIWNDF_NOTIFYMODE | MCIWNDF_NOTIFYMEDIA | 
@@ -159,6 +159,7 @@ void PlayMovie(char *filename){
 		MCIWndPlay(g_MCIHand); // play it 
   }
 } //PlayMovie
+*/
 
 void KillMovie(){ //stop the movie
 if(g_MCIHand) //if valid handle

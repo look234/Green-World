@@ -22,6 +22,8 @@ CGameObject(object, name, location, xspeed, yspeed){ //constructor
 /// \param planeloc plane location
 /// \param d distance to plane
 
+
+//I LIKE RO CAKRE
 void CIntelligentObject::plane(D3DXVECTOR3 planeloc, float d){ //compute relationship with plane
 
   //remember plane location

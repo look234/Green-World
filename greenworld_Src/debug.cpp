@@ -7,7 +7,8 @@
 #include "debug.h"
 
 #ifdef DEBUG_ON //ensure debug code is not compiled unless needed
-
+//HUHRUHRURH
+//huhruhrurhurhruhrurhurhru
 CDebugManager::CDebugManager(){ //constructor
 
   //default settings

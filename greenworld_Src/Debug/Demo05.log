@@ -1,0 +1,107 @@
+﻿Build started 2/3/2012 9:06:22 PM.
+     1>Project "C:\Users\look234\Green-World\greenworld_Src\Demo05.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Debug\Demo05.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo- /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D D3D_DEBUG_INFO /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTCc /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Objman.cpp
+         Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 16.00.40219.01 for 80x86
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         cl /c /ZI /nologo- /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D D3D_DEBUG_INFO /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTCc /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Objman.cpp
+     1>cl : Command line warning D9035: option 'nologo-' has been deprecated and will be removed in a future release
+         
+         Objman.cpp
+     1>c:\users\look234\green-world\greenworld_src\sprite.h(26): warning C4324: 'C3DSprite' : structure was padded due to __declspec(align())
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(99): warning C4189: 'exitInfo' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(334): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(491): warning C4189: 'inAnotherObject' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(536): warning C4189: 'inAnotherObject' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(651): warning C4189: 'temp' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(754): warning C4065: switch statement contains 'default' but no 'case' labels
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(851): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(866): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(1238): warning C4189: 'healthBarsToDraw' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(1513): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(1524): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(1536): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(1548): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(1999): warning C4189: 'yspeed' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(1998): warning C4189: 'xspeed' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(2166): warning C4100: 'index' : unreferenced formal parameter
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(2217): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(2621): warning C4100: 'mLevel' : unreferenced formal parameter
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(2631): warning C4189: 'itemsThatMatch' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(2765): warning C4189: 'itemsThatMatch' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(2875): warning C4189: 'objStack' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3161): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3161): warning C4309: '=' : truncation of constant value
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3162): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3162): warning C4309: '=' : truncation of constant value
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3163): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3163): warning C4309: '=' : truncation of constant value
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3514): warning C4189: 'testString' : local variable is initialized but not referenced
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3579): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3821): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3822): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3859): warning C4100: 'level' : unreferenced formal parameter
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3911): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3917): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(3923): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(4007): warning C4100: 'wait' : unreferenced formal parameter
+     1>c:\users\look234\green-world\greenworld_src\objman.cpp(4054): warning C4100: 'spellId' : unreferenced formal parameter
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/Demo05.exe" /INCREMENTAL /NOLOGO D3dx9.lib d3d9.lib ws2_32.lib winmm.lib dsound.lib dinput8.lib dxguid.lib dxerr.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:".\Debug\Demo05.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/Demo05.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\Demo05.lib" /MACHINE:X86 .\Debug\Demo05.exe.embed.manifest.res
+         .\Debug/abort.obj
+         .\Debug/Ai.obj
+         .\Debug/Barrier.obj
+         .\Debug/Crow.obj
+         .\Debug/debug.obj
+         .\Debug/flameGuy.obj
+         .\Debug/flameGuy2.obj
+         .\Debug/gamerenderer.obj
+         .\Debug/Homing.obj
+         .\Debug/ImageFileNameList.obj
+         .\Debug/Input.obj
+         .\Debug/IPMgr.obj
+         .\Debug/item.obj
+         .\Debug/lootList.obj
+         .\Debug/Main.obj
+         .\Debug/Monster.obj
+         .\Debug/Monster2.obj
+         .\Debug/Object.obj
+         .\Debug/Objman.obj
+         .\Debug/Random.obj
+         .\Debug/renderer.obj
+         .\Debug/roundMan.obj
+         .\Debug/roundMan2.obj
+         .\Debug/Sound.obj
+         .\Debug/Sprite.obj
+         .\Debug/SpriteMan.obj
+         .\Debug/Text.obj
+         .\Debug/Timer.obj
+         .\Debug/tinystr.obj
+         .\Debug/tinyxml.obj
+         .\Debug/tinyxmlerror.obj
+         .\Debug/tinyxmlparser.obj
+         .\Debug/Tornado.obj /MACHINE:I386 
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\Demo05.exe.embed.manifest" /manifest .\Debug\Demo05.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         Demo05.vcxproj -> C:\Users\look234\Green-World\greenworld_Src\.\Debug\Demo05.exe
+       FinalizeBuildStatus:
+         Deleting file ".\Debug\Demo05.unsuccessfulbuild".
+         Touching ".\Debug\Demo05.lastbuildstate".
+     1>Done Building Project "C:\Users\look234\Green-World\greenworld_Src\Demo05.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.41

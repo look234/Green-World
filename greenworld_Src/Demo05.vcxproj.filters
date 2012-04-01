@@ -113,6 +113,9 @@
     <ClCompile Include="Homing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="healGuy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abort.h">
@@ -187,9 +190,6 @@
     <ClInclude Include="flameGuy2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="roundMan.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -209,6 +209,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Homing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="roundMan.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="healGuy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

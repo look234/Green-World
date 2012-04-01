@@ -141,6 +141,7 @@
     <ClCompile Include="flameGuy.cpp" />
     <ClCompile Include="flameGuy2.cpp" />
     <ClCompile Include="gamerenderer.cpp" />
+    <ClCompile Include="healGuy.cpp" />
     <ClCompile Include="Homing.cpp" />
     <ClCompile Include="ImageFileNameList.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="flameGuy.h" />
     <ClInclude Include="flameGuy2.h" />
     <ClInclude Include="gamerenderer.h" />
+    <ClInclude Include="healGuy.h" />
     <ClInclude Include="Homing.h" />
     <ClInclude Include="ImageFileNameList.h" />
     <ClInclude Include="Input.h" />

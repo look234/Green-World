@@ -74,6 +74,8 @@ enum ObjectType{
 	ALPHA_OBJECT,
 	ITEMCURSOR_OBJECT,
 
+	//healing person
+	HEALGUY_OBJECT,
 
 	//Tiles
 	FOREST1_OBJECT,

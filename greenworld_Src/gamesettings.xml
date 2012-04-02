@@ -47,6 +47,10 @@
     <sprite name="monster" file="Images\\monsters\\monster\\monsterA" ext="png" frames="4" />
     <sprite name="explodingmonster" file="Images\\monsters\\monster\\monsterexA" ext="png" frames="2" />
     <sprite name="deadmonster" file="Images\\monsters\\monster\\monsterdeadA" ext="png" frames="4" />
+
+    <sprite name="healguy" file="Images\\link" ext="png" frames="16"/>
+    
+    
     
     <sprite name="monster2" file="Images\\monsters\\monster2\\monsterB" ext="png" frames="4" />
     <sprite name="explodingmonster2" file="Images\\monsters\\monster2\\monsterexB" ext="png" frames="2" />

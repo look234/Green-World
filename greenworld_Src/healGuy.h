@@ -1,6 +1,6 @@
 #pragma once
 
-enum States3Type{CRUISINGS3_STATE,AVOIDINGS3_STATE, CHASINGS3_STATE, WAITS3_STATE};
+enum HealType{herCRUISINGS3_STATE,herAVOIDINGS3_STATE, herCHASINGS3_STATE, herWAITS3_STATE};
 
 #include "ai.h"
 
@@ -10,7 +10,8 @@ private:
 	float height;
 	float width;
 
-	States3Type m_eState;
+	
+	HealType m_eState;
 
 	int maxHeight;//max height
 	int timeHeight;//time between witch
@@ -26,8 +27,10 @@ private:
 	void AvoidMonster();
 	void Stay();
 	void Healing();
+	void SetState(HealType state);
 
 public:
+	
 	CHealGuyObject(char* name, D3DXVECTOR3 location, float xspeed, float yspeed);
 	virtual void move();
 

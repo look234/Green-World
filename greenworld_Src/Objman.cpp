@@ -10,6 +10,7 @@
 #include "flameGuy2.h"
 #include "roundMan.h"
 #include "roundMan2.h"
+#include "healGuy.h"
 #include "gamerenderer.h"
 #include <cstring>
 #include "Tornado.h"
@@ -626,9 +627,10 @@ void CObjectManager::createZone(int zId){
 			case 2: monster = MONSTER2_OBJECT; monsterName = "monster2"; break;
 			case 3: monster = FLAMEGUY_OBJECT; monsterName = "flameguy"; break;
 			case 4: monster = FLAMEGUY2_OBJECT; monsterName = "flameguy2"; break;
-			case 5: monster = ROUNDMAN_OBJECT; monsterName = "roundman"; break;
-			case 6: monster = ROUNDMAN2_OBJECT; monsterName = "roundman2"; break;
-			case 7: monster = TREASURE_OBJECT; monsterName = "treasure"; break;
+			case 5: monster = HEALGUY_OBJECT; monsterName="healguy";break;//healing person
+			case 6: monster = ROUNDMAN_OBJECT; monsterName = "roundman"; break;
+			case 7: monster = ROUNDMAN2_OBJECT; monsterName = "roundman2"; break;
+			case 8: monster = TREASURE_OBJECT; monsterName = "treasure"; break;
 			}
 
 			D3DXVECTOR3 v;
@@ -795,9 +797,19 @@ void CObjectManager::create(ObjectType object, char* name, D3DXVECTOR3 location,
 					m_pObjectList[i] = new CFlameGuy2Object(name, location, xspeed, yspeed);
 				}else if(object == ROUNDMAN_OBJECT){ //intelligent object
 					m_pObjectList[i] = new CRoundManObject(name, location, xspeed, yspeed);
-				}else if(object == ROUNDMAN2_OBJECT){ //intelligent object
+				}
+				
+				else if(object == ROUNDMAN2_OBJECT){ //intelligent object
 					m_pObjectList[i] = new CRoundMan2Object(name, location, xspeed, yspeed);
-				}else if(object == INVENTORY_OBJECT){ //intelligent object
+
+				}
+				else if(object == HEALGUY_OBJECT)
+				{
+					m_pObjectList[i] = new CHealGuyObject(name, location, xspeed, yspeed);
+
+				}
+				
+				else if(object == INVENTORY_OBJECT){ //intelligent object
 					m_pObjectList[i] = new CGameObject(INVENTORY_OBJECT,name, location, 0, 0);
 				}else //dumb object
 					m_pObjectList[i] = new CGameObject(object, name, location, xspeed, yspeed);

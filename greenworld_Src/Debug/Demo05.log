@@ -1,7 +1,7 @@
-﻿Build started 3/31/2012 1:44:28 PM.
+﻿Build started 4/1/2012 10:18:38 PM.
      1>Project "C:\Users\Michael\Desktop\GreenWorld\Soft-Dev2\greenworld_Src\Demo05.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating ".\Debug\Demo05.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching ".\Debug\Demo05.unsuccessfulbuild".
        ClCompile:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo- /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D D3D_DEBUG_INFO /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTCc /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt healGuy.cpp
          Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 16.00.30319.01 for 80x86
@@ -11,6 +11,8 @@
      1>cl : Command line warning D9035: option 'nologo-' has been deprecated and will be removed in a future release
          
          healGuy.cpp
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\sprite.h(26): warning C4324: 'C3DSprite' : structure was padded due to __declspec(align())
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\healguy.cpp(79): warning C4189: 'x' : local variable is initialized but not referenced
          All outputs are up-to-date.
        ManifestResourceCompile:
          All outputs are up-to-date.
@@ -63,4 +65,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.64
+Time Elapsed 00:00:01.46

@@ -155,6 +155,10 @@ void CGameRenderer::LoadTextures(){ //create textures for image storage
 	g_cSpriteManager.Load(EXPLODINGROUNDMAN2_OBJECT,"explodingroundman2");
 	g_cSpriteManager.Load(DEADROUNDMAN2_OBJECT,"deadroundman2");
 
+	//Heal guy
+	g_cSpriteManager.Load(HEALGUY_OBJECT,"healguy");
+
+
     ///Spells
 	g_cSpriteManager.Load(FIREBALL_OBJECT,"fireball");
 	g_cSpriteManager.Load(LIGHTNING_OBJECT,"lightning");

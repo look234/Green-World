@@ -353,6 +353,7 @@ void CGameObject::move(){ //move object
 			 case MONSTER_OBJECT:
 			 case MONSTER2_OBJECT:
 			 case FLAMEGUY_OBJECT:
+			 case HEALGUY_OBJECT:
 			 case FLAMEGUY2_OBJECT:
 			 case ROUNDMAN_OBJECT:
 			 case ROUNDMAN2_OBJECT: if(g_cObjectManager.monsterSmartMoveCheck(temp)) moved = true; break;

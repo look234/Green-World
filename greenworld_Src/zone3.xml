@@ -32,7 +32,7 @@
   <monster id = "3" min="4" max="7" xp="85" lv="4" hp="130" tc="1" x="0" y="0"/>
   <monster id = "5" min="4" max="7" xp="65" lv="3" hp="110" tc="1" x="0" y="0"/>
   <monster id = "5" min="4" max="7" xp="85" lv="4" hp="130" tc="1" x="0" y="0"/>
-  <monster id = "7" min="1" max="4" xp="0" lv="3" hp="1" tc="2" x="0" y="0"/>
+ 
   <!-- <monster id = "5" min="3" max="6" xp="65" lv="3" hp="50" tc="1" x="0" y="0"/>
   <monster id = "7" min="1" max="4" xp="0" lv="3" hp="1" tc="2" x="0" y="0"/>
   

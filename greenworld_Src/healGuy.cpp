@@ -28,7 +28,7 @@ CHealGuyObject::CHealGuyObject(char* name, D3DXVECTOR3 location, float xspeed, f
 
 void CHealGuyObject::move()
 {
-	 CGameObject::move();
+	 //CGameObject::move();
 	 ai();
 
 

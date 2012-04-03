@@ -26,7 +26,7 @@
     <sprite name="link" file="Images\\hero" ext="png" frames="48" />
     <sprite name="linkATK" file="Images\\linkATK" ext="png" frames="1" />
     <sprite name="NPC" file="Images\\NPC" ext="png" frames="3" />
-    <sprite name="zelda" file="Images\\link" ext="png" frames="16"/>
+    
    <!-- <sprite name="healthpiece" file="Images\\healthpiece" ext="png" frames="1" />
     <sprite name="healthframe" file="Images\\healthbarframe" ext="png" frames="1" /> -->
 

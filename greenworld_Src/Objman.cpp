@@ -289,7 +289,7 @@ CObjectManager::~CObjectManager(){ //destructor
 void CObjectManager::createZone(int zId){
 
 	create(LINK_OBJECT, "link", D3DXVECTOR3((float)spawnX, (float)spawnY, 100), -3, 0);
-
+	create(HEALGUY_OBJECT,"healguy", D3DXVECTOR3((float)spawnX+10, (float)spawnY+10, 100),-3,0);
 
 	timeToBeHitAgain = 1000; //ms
 	timeHit = 0; //Starting at the default
@@ -805,7 +805,7 @@ void CObjectManager::create(ObjectType object, char* name, D3DXVECTOR3 location,
 				}
 				else if(object == HEALGUY_OBJECT)
 				{
-					m_pObjectList[i] = new CHealGuyObject(name, location, xspeed, yspeed);
+					m_pObjectList[i] = new CHealGuyObject(name, D3DXVECTOR3(500,500,500), 0, 0);
 
 				}
 				
@@ -2110,6 +2110,16 @@ void CObjectManager::MonsterDetection(){
 					}
 					break;
 					}
+
+										case HEALGUY_OBJECT:{
+						if(distance(m_pObjectList[i], m_pPlayerObject) < 25.0f){ //distance to hurt player
+							playerIsHit = true;
+							mobMeleeDamage = g_cRandom.number(monsterInfo[i].LV,monsterInfo[i].LV+3);
+							mobMeleeDamage = -4*mobMeleeDamage;
+					}
+					break;
+					}
+
 					case FLAMEGUY2_OBJECT:{
 						if(distance(m_pObjectList[i], m_pPlayerObject) < 25.0f){ //distance to hurt player
 							playerIsHit = true;
@@ -2451,6 +2461,7 @@ int CObjectManager::enemies(){ //return number of enemies
 				case MONSTER_OBJECT: count++; break;
 				case MONSTER2_OBJECT: count++; break;
 				case FLAMEGUY_OBJECT: count++; break;
+				case HEALGUY_OBJECT:count++; break;
 				case FLAMEGUY2_OBJECT: count++; break;
 				case ROUNDMAN_OBJECT: count++; break;
 				case ROUNDMAN2_OBJECT: count++; break;

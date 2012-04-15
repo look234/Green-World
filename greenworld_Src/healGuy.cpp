@@ -14,21 +14,22 @@ const int FALLBACK_DISTANCE=150; ///< Fall back at this vertical distance from p
 const int BEHIND_DISTANCE=-5; ///< Horizontal distance considered to be behind plane
 
 
-CHealGuyObject::CHealGuyObject(char* name, D3DXVECTOR3 location, float xspeed, float yspeed):CIntelligentObject(HEALGUY_OBJECT, name, location, xspeed, yspeed)
+CHealGuyObject::CHealGuyObject(char* name, D3DXVECTOR3 location, float xspeed, float yspeed):
+CIntelligentObject(HEALGUY_OBJECT, name, location, xspeed, yspeed)
 {
 
 
-	cool=location;
-	height=location.y;
-	width=location.x;
-	m_fDistance = m_fHorizontalDistance = m_fVerticalDistance = 0.0f;
-	 m_eState = herCRUISINGS3_STATE;
-	 lastAi=0; AiDelay=0;
+ cool = location;
+  mHeight = location.y;
+  mWidth = location.x;
+  m_fDistance = m_fHorizontalDistance = m_fVerticalDistance = 0.0f;
+  m_eState = herCRUISINGS3_STATE;
+  m_nLastAiTime = 0; m_nAiDelayTime = 0;
 }
 
 void CHealGuyObject::move()
 {
-	 //CGameObject::move();
+	 CGameObject::move();
 	 ai();
 
 
@@ -36,12 +37,12 @@ void CHealGuyObject::move()
 
 void CHealGuyObject::ai(){ //main AI function
   //do the following periodically
-  if(g_cTimer.elapsed(lastAi,AiDelay)) 
+  if(g_cTimer.elapsed(m_nLastAiTime,m_nAiDelayTime)) 
     switch(m_eState){ //behavior depends on state
-      case herCRUISINGS3_STATE: Healing(); break;
-      case herAVOIDINGS3_STATE: AvoidMonster(); break;
-	  case herCHASINGS3_STATE: KeepUp(); break;
-	  case herWAITS3_STATE: Stay(); break;
+      case herCRUISINGS3_STATE: CruisingAi(); break;
+      case herAVOIDINGS3_STATE: AvoidingAi(); break;
+	  case herCHASINGS3_STATE: ChasingAi(); break;
+	  case herWAITS3_STATE: WaitingAi(); break;
       default: break;
     }
 }
@@ -53,21 +54,22 @@ void CHealGuyObject::SetState(HealType state){
 
   switch(m_eState){ //change behavior settings
 
+   
     case herCRUISINGS3_STATE:
-      AiDelay=400+g_cRandom.number(0,200);
-      DelayTime=3000+g_cRandom.number(0,5000);
+      m_nAiDelayTime=400+g_cRandom.number(0,200);
+      m_nHeightDelayTime=3000+g_cRandom.number(0,5000);
       break;
 
     case herAVOIDINGS3_STATE:
-      AiDelay=250+g_cRandom.number(0,250); 
+      m_nAiDelayTime=250+g_cRandom.number(0,250); 
       m_fXspeed=-3;
       break;
 	case herCHASINGS3_STATE:
       //m_nAiDelayTime=400+g_cRandom.number(0,200);
-      DelayTime=300+g_cRandom.number(0,50);
+      m_nHeightDelayTime=300+g_cRandom.number(0,50);
 	  break;
 	case herWAITS3_STATE:
-	  AiDelay=250+g_cRandom.number(0,250); 
+	  m_nAiDelayTime=250+g_cRandom.number(0,250); 
 	  break;
 
     default: break;
@@ -75,13 +77,13 @@ void CHealGuyObject::SetState(HealType state){
 }
 
 
-void CHealGuyObject::Stay(){ //just cruising along
+void CHealGuyObject::CruisingAi(){ //just cruising along
 int x=0;
 
-if(g_cTimer.elapsed(timeHeight, DelayTime))
+if(g_cTimer.elapsed(m_nHeightTime, m_nHeightDelayTime))
 	{
 	int rand = g_cRandom.number(1,3000);
-	DelayTime=100+g_cRandom.number(0,1000);
+	m_nHeightDelayTime=100+g_cRandom.number(0,1000);
 	
 		if(rand%2 == 1)
 	{
@@ -102,7 +104,7 @@ if(g_cTimer.elapsed(timeHeight, DelayTime))
 }
 
 
-void CHealGuyObject::AvoidMonster(){ //avoiding plane
+void CHealGuyObject::AvoidingAi(){ //avoiding plane
 		if(xdistance > cool.x)
 	{
 		m_fXspeed = (float)-g_cRandom.number(7,10); 
@@ -131,15 +133,14 @@ void CHealGuyObject::AvoidMonster(){ //avoiding plane
 }
 
 
-void CHealGuyObject::KeepUp()
+void CHealGuyObject::ChasingAi()
 {
 
-		DelayTime=100+g_cRandom.number(0,1000);
+		m_nHeightDelayTime=100+g_cRandom.number(0,1000);
 
-	if(g_cTimer.elapsed(timeHeight, DelayTime))
+	if(g_cTimer.elapsed(m_nHeightTime, m_nHeightDelayTime))
 	{
-		DelayTime=100+g_cRandom.number(0,1000);
-		
+		m_nHeightDelayTime=100+g_cRandom.number(0,1000);
 	
 
 
@@ -165,7 +166,7 @@ void CHealGuyObject::KeepUp()
 	}}
 }
 
-void CHealGuyObject::Healing(){ //avoiding plane
+void CHealGuyObject::WaitingAi(){ //avoiding plane
 	
 	
 	/*

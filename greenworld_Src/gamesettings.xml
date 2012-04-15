@@ -257,7 +257,15 @@
       fly="1"
       animation="0,1,2,3"
 		/>
-
+    <object name="healguy"
+			minxspeed="-4" maxxspeed="-1"
+			minyspeed="-1" maxyspeed="1"
+			frameinterval="250"
+			vulnerable="1"
+			fly="1"
+			cycle="1"
+			animation="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+		/>
     <!--+++++++++++++++Monster+++++++++++++++-->
     <object name="monster"
 			minxspeed="-4" maxxspeed="-1"

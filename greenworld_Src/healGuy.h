@@ -6,33 +6,32 @@ enum HealType{herCRUISINGS3_STATE,herAVOIDINGS3_STATE, herCHASINGS3_STATE, herWA
 
 class CHealGuyObject:public CIntelligentObject{
 
-private:
-	float height;
-	float width;
+  private:
+	float mHeight;
+	float mWidth;
+    HealType m_eState; ///< Current state.
 
-	
-	HealType m_eState;
+    
+	int m_nDesiredHeight; ///< Desired altitude.
+    int m_nHeightTime; ///< Time between height changes.
+    int m_nHeightDelayTime; ///< Time to next height change.
 
-	int maxHeight;//max height
-	int timeHeight;//time between witch
-	int DelayTime;//time to next switch
+    int m_nSpeedVariationTime; ///< Last time speed varied.
+    int m_nSpeedVariationDuration; ///< Time to next speed variation.
+    int m_nLastAiTime; ///< Last time AI was used.
+    int m_nAiDelayTime; ///< Time until AI next used.
 
-	int speedVarTime;//last time speed varried
-	int speedVarDur;//time to next speed varry
-	int lastAi;//last time Ai was used
-	int AiDelay;// time until ai used
+    void ai(); ///< Artificial intelligence.
+    void CruisingAi(); ///< Ai for cruising along.
+    void AvoidingAi(); ///< Ai for avoiding plane.
+	void ChasingAi();
+	void WaitingAi();
+    void SetState(HealType state); ///< Change state
 
-	void ai();
-	void KeepUp();
-	void AvoidMonster();
-	void Stay();
-	void Healing();
-	void SetState(HealType state);
+  public:
+    CHealGuyObject(char* name, D3DXVECTOR3 location, float xspeed, float yspeed); //< Constructor.
+    virtual void move(); ///< Move depending on time and speed
 
-public:
-	
-	CHealGuyObject(char* name, D3DXVECTOR3 location, float xspeed, float yspeed);
-	virtual void move();
 
 
 

@@ -8,7 +8,7 @@ extern CTimer g_cTimer;  //game timer
 extern CRandom g_cRandom; //random number generator
 extern CSoundManager* g_pSoundManager;
 D3DXVECTOR3 cool;
-const int CLOSE_DISTANCE=150; ///< Distance for close to plane
+const int CLOSE_DISTANCE=90; ///< Distance for close to plane
 const int FAR_DISTANCE=500; ///< Distance for "far from" plane.
 const int FALLBACK_DISTANCE=150; ///< Fall back at this vertical distance from plane
 const int BEHIND_DISTANCE=-5; ///< Horizontal distance considered to be behind plane
@@ -66,7 +66,7 @@ void CHealGuyObject::SetState(HealType state){
       break;
 	case herCHASINGS3_STATE:
       //m_nAiDelayTime=400+g_cRandom.number(0,200);
-      m_nHeightDelayTime=300+g_cRandom.number(0,50);
+      //m_nHeightDelayTime=300+g_cRandom.number(0,50);
 	  break;
 	case herWAITS3_STATE:
 	  m_nAiDelayTime=250+g_cRandom.number(0,250); 
@@ -96,11 +96,14 @@ if(g_cTimer.elapsed(m_nHeightTime, m_nHeightDelayTime))
 		
 	}
 	
-	if(m_fDistance < CLOSE_DISTANCE){
-		g_pSoundManager->play(DEADCROW14_SOUND);
+	
+if(m_fDistance < CLOSE_DISTANCE){
+		//g_pSoundManager->play(DEADCROW14_SOUND);
 		SetState(herCHASINGS3_STATE);}
 	}
 
+
+	
 }
 
 
@@ -136,40 +139,55 @@ void CHealGuyObject::AvoidingAi(){ //avoiding plane
 void CHealGuyObject::ChasingAi()
 {
 
-		m_nHeightDelayTime=100+g_cRandom.number(0,1000);
+		//m_nHeightDelayTime=100+g_cRandom.number(0,1000);
 
-	if(g_cTimer.elapsed(m_nHeightTime, m_nHeightDelayTime))
-	{
-		m_nHeightDelayTime=100+g_cRandom.number(0,1000);
+	//if(g_cTimer.elapsed(m_nHeightTime, m_nHeightDelayTime))
 	
-
-
-	if(m_fHorizontalDistance > 0)
+		//m_nHeightDelayTime=100+g_cRandom.number(0,1000);
+	
+	//int vert= m_fDistance-m_fHorizontalDistance;
+	//int horz=m_fDistance-m_fVerticalDistance;
+	//if( m_fDistance)
+	//{
+     // SetState(herWAITS3_STATE);
+	//}
+	
+	//else
+	if(m_fHorizontalDistance > 10)
 	{
-		m_fXspeed = -10;
+		m_fXspeed = -30;
 	
 	}
-	 if(m_fHorizontalDistance < 0)
+	
+	 if(m_fHorizontalDistance-50 < -10)
 	{
-		m_fXspeed = 10;
+		m_fXspeed = 30;
 
 	}
-	if(m_fVerticalDistance > 0)
+	if(m_fVerticalDistance > 10)
 	{
-		m_fYspeed = 10;
+		m_fYspeed = 30;
 		
 	}
-	if(m_fVerticalDistance < 0)
+	if(m_fVerticalDistance < -10)
 	{
-		m_fYspeed = -10;
+		m_fYspeed = -30;
 	
-	}}
+	}
+	//if(m_fDistance > CLOSE_DISTANCE){
+		//g_pSoundManager->play(DEADCROW14_SOUND);
+		//SetState(herWAITS3_STATE);}
+		//if(m_fDistance < CLOSE_DISTANCE){
+		//g_pSoundManager->play(DEADCROW14_SOUND);
+		//SetState(herCHASINGS3_STATE);}
+	
+	
 }
 
 void CHealGuyObject::WaitingAi(){ //avoiding plane
 	
 	
-	/*
+	
   //height variation
   if(g_cTimer.elapsed(m_nHeightTime, m_nHeightDelayTime)){
     m_nDesiredHeight = g_cRandom.number(100,450);
@@ -187,9 +205,9 @@ void CHealGuyObject::WaitingAi(){ //avoiding plane
   }
   if(m_fHorizontalDistance > BEHIND_DISTANCE) //if behind
     m_fXspeed = -1; //slow down 
-  */
+  
   //look for plane, maybe leave avoiding state
-    /*if(m_fDistance < CLOSE_DISTANCE&&
-      m_fHorizontalDistance+100 > BEHIND_DISTANCE)*/
-    SetState(herCRUISINGS3_STATE);
+    if(m_fDistance < CLOSE_DISTANCE&&
+      m_fHorizontalDistance+100 > BEHIND_DISTANCE);
+    
 }

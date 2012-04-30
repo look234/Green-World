@@ -43,6 +43,7 @@ int itemsMenuON = 0;
 int spellsMenuON = 0;
 int optionsMenuON = 0;
 int baseValue = 0;
+int HealMana = 10;
 extern int currentItemSelect;
 
 CObjectManager::CObjectManager(){ //constructor 
@@ -2107,15 +2108,24 @@ void CObjectManager::MonsterDetection(){
 							playerIsHit = true;
 							mobMeleeDamage = g_cRandom.number(monsterInfo[i].LV,monsterInfo[i].LV+3);
 							mobMeleeDamage = 4*mobMeleeDamage;
+
 					}
 					break;
 					}
 
 										case HEALGUY_OBJECT:{
-						if(distance(m_pObjectList[i], m_pPlayerObject) < 25.0f){ //distance to hurt player
+											if(HealMana>=1){
+						if(distance(m_pObjectList[i], m_pPlayerObject) < 125.0f){ //distance to hurt player
 							playerIsHit = true;
 							mobMeleeDamage = g_cRandom.number(monsterInfo[i].LV,monsterInfo[i].LV+3);
 							mobMeleeDamage = -4*mobMeleeDamage;
+							HealMana--;
+						}
+						else
+						{
+							mobMeleeDamage = 0;
+						}
+
 					}
 					break;
 					}

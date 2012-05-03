@@ -21,6 +21,7 @@ class CTimer{ //game timer class
 		CTimer(); ///< Constructor.
 		virtual void start(); ///< Start the timer.
 		virtual int time(); ///< Return the time in ms.
+		virtual void wait();
 		BOOL elapsed(int &start,int interval); ///< Has interval ms elapsed since start?
 };
 

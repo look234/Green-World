@@ -31,3 +31,7 @@ int CTimer::elapsed(int &start,int interval){
 		start = current_time; return TRUE; //reset the start and succeed
 	}else return FALSE; //otherwise, fail
 }
+
+void CTimer::wait(){
+ for (time_t t = time() + 50; time() < t; ) {}
+}

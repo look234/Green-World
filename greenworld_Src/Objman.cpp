@@ -22,7 +22,6 @@
 #define PI 3.14159265
 #define length(a) ( sizeof ( a ) / sizeof ( *a ) )
 
-
 //extern CTimer g_cTimer; //game timer
 extern int g_nScreenWidth;
 extern int g_nScreenHeight;
@@ -43,10 +42,8 @@ int itemsMenuON = 0;
 int spellsMenuON = 0;
 int optionsMenuON = 0;
 int baseValue = 0;
-int HealMana = 900;
-int curHP;
+int HealMana = 10;
 extern int currentItemSelect;
-
 
 CObjectManager::CObjectManager(){ //constructor 
 
@@ -291,7 +288,7 @@ CObjectManager::~CObjectManager(){ //destructor
 
 void CObjectManager::createZone(int zId){
 
-	create(LINK_OBJECT, "link", D3DXVECTOR3((float)spawnX, (float)spawnY, 100), -3, 0);
+	create(LINK_OBJECT, "link", D3DXVECTOR3((float)spawnX, (float)spawnY, 450), -3, 0);
 	create(HEALGUY_OBJECT,"healguy", D3DXVECTOR3((float)spawnX+10, (float)spawnY+10, 100),-3,0);
 
 	timeToBeHitAgain = 1000; //ms
@@ -702,7 +699,7 @@ void CObjectManager::createZone(int zId){
 
 	}//End main if
 
-	//Generate Smart NPCs
+/////////////////////////////////Generate Smart NPCs/////////////////////////////////////////////
 	ObjectType NPC[1];
 	NPC[0] = NPC_OBJECT;
 
@@ -714,9 +711,18 @@ void CObjectManager::createZone(int zId){
 	vG.y =250;
 	vG.z = 500.0f;
 
- // create(NPC[0], NPCNames[0], vG, 0, 0);
- // create(LINK_OBJECT, "link", D3DXVECTOR3((float)spawnX, (float)spawnY, 500), -3, 0);
- 
+	//NPC[1] = NPC_OBJECT;
+	//NPCNames[1] = "NPC";
+
+	//D3DXVECTOR3 vG2;
+	//vG2.x = 150;
+	//vG2.y = 250;
+	//vG2.z = 500.0f;
+
+	create(NPC[0], NPCNames[0], vG, 0, 0);
+
+	//create(NPC[1], NPCNames[1], vG2, 0, 0);
+/////////////////////////////////Generate Smart NPCs/////////////////////////////////////////////
  
   m_mapObjectsCount = 2*(zoneHeight/64 + zoneWidth/64) + m_nMaxExitCount + 1;
   m_miniMapObjects = new CGameObject*[m_mapObjectsCount];
@@ -832,10 +838,11 @@ void CObjectManager::createSpells(ObjectType object, char* name, D3DXVECTOR3 loc
 		case BARRIER_OBJECT: m_spellObjects[i] = new CBarrierObject(name,location,xspeed,yspeed); break;
 		case TORNADO_OBJECT: m_spellObjects[i] = new CTornadoObject(name,location,xspeed,yspeed); break;
 		case ENEMYHOMING_OBJECT: m_spellObjects[i] = new CHomingObject(name,location,xspeed,yspeed); break;
-		default: m_spellObjects[i] = new CGameObject(object, name, location, xspeed, yspeed);
+		case LINKATK_OBJECT: m_spellObjects[i] = new CGameObject(LINKATK_OBJECT, "linkATK", location, xspeed, yspeed);break;
+		default: m_spellObjects[i] = new CGameObject(object, name, location, xspeed, yspeed);break;
 		}
 
-		spellTimers[i] = g_cTimer.time() + 2000; //Spells will last for 2 seconds
+		spellTimers[i] = g_cTimer.time() + 50; //Spells will last for 2 seconds
 		m_nSpellCount++;
 		collisionCount++;			
 	}
@@ -1161,20 +1168,6 @@ void CObjectManager::move(){
 				if(m_pObjectList[i]->m_bIntelligent) //if intelligent, tell it about plane
 					((CIntelligentObject*)m_pObjectList[i])->plane(m_pPlayerObject->m_structLocation, distance(m_pObjectList[i], m_pPlayerObject));
 					 m_pObjectList[i]->move();
-
-					 if(m_pObjectList[i]->m_bVulnerable)
-						 if(distance(m_pObjectList[i],m_pPlayerObject) < 350.0f)
-							 monsterHealthBar(i);
-						 else{
-							 for(int c=0; c<monsterAmount; c++)
-							 {
-								 if(monsterHealthBars[c].show && monsterHealthBars[c].currentMonster == i)
-									 monsterHealthBarDestroy(c);
-							 }
-						 }
-						 
-						//	 if(monsterHealthBars[i].show)
-						//	 monsterHealthBarDestroy(i);
 			}
 		}
 	}
@@ -1486,6 +1479,14 @@ bool CObjectManager::spellSmartMoveCheck(CGameObject* tempPlayerObject)
 		}
 	}
 
+	//////////////////////////////////////////////////////////////////////////no monster walk through
+	for(int i=0; i < m_nCount; i++){
+		if(distanceRect(tempPlayerObject, m_pObjectList[i]) < 55.0f){
+			delete tempPlayerObject;
+			return false;
+		}
+	}
+
 	for(int i=0; i < m_nImpassibleCount32; i++){
 		float theDistance = 20.0f;
 
@@ -1632,19 +1633,20 @@ void CObjectManager::killSpell(int index){ //remove object
 ///Activate hero's attack
 
 void CObjectManager::HeroAttack(int key){ 
-	if(g_cTimer.elapsed(m_nLastGunFireTime, 400)){ //slow down attack rate
+	if(g_cTimer.elapsed(m_nLastGunFireTime, 40)){ //slow down attack rate //400
 		D3DXVECTOR3 v; //location of hero
 		v.x = m_pPlayerObject->m_structLocation.x;
 		v.y = m_pPlayerObject->m_structLocation.y;
 		v.z = 500.0f;
 
 		switch(key) {
-		case 1: v.x -= 10; break;
-		case 2: v.x += 10; break;
-		case 3: v.y -= 10; break;
-		case 4: v.y += 10; break;
+		case 1: v.x -= 50; break; //v.x -= 50
+		case 2: v.x += 50; break; //v.x += 50
+		case 3: v.y -= 50; break; //v.y -= 50
+		case 4: v.y += 50; break; //v.y += 50
 		}
 		createSpells(LINKATK_OBJECT, "linkATK", v, 0, 0);
+		
 	}
 }
 
@@ -2047,10 +2049,10 @@ void CObjectManager::NPCDetection(){
 		if(m_pObjectList[i]){ //if object exists
 			switch (m_pObjectList[i]->m_nObjectType){
 				case NPC_OBJECT:{
-					if(distance(m_pObjectList[i], m_pPlayerObject) < 25.0f){ //distance to hurt player
+					if(distance(m_pObjectList[i], m_pPlayerObject) < 65.0f){ //distance to NPC //25
 
 						whee.x = m_pObjectList[i]->m_structLocation.x-3;
-						whee.y = m_pObjectList[i]->m_structLocation.y + 30;
+						whee.y = m_pObjectList[i]->m_structLocation.y + 70;
 
 						m_talkBubbleObjects[0] = new CGameObject(TALK_OBJECT, "talkBubble", whee, 0, 0);
 						TalkBubble = TRUE;
@@ -2115,24 +2117,20 @@ void CObjectManager::MonsterDetection(){
 					break;
 					}
 
-										case HEALGUY_OBJECT:{
-											if(HealMana>=1){
-						if(distance(m_pObjectList[i], m_pPlayerObject) < 225.0f){ //distance to hurt player
+					case HEALGUY_OBJECT:{
+						if(HealMana>=1){
+						if(distance(m_pObjectList[i], m_pPlayerObject) < 125.0f){ //distance to hurt player
 							playerIsHit = true;
-							mobMeleeDamage =2;
-							if (HP<.5*totalHP){mobMeleeDamage = -10*mobMeleeDamage;HealMana-=50;}
-							if(HP>.5*totalHP){mobMeleeDamage = -5*mobMeleeDamage;HealMana-=5;}
-							if(HP==totalHP){mobMeleeDamage = 0*mobMeleeDamage;}
-							//HealMana--;
-
+							mobMeleeDamage = g_cRandom.number(monsterInfo[i].LV,monsterInfo[i].LV+3);
+							mobMeleeDamage = -4*mobMeleeDamage;
+							HealMana--;
 						}
-				
-
-					}
-																	else
+						else
 						{
 							mobMeleeDamage = 0;
 						}
+
+					}
 					break;
 					}
 
@@ -2207,9 +2205,9 @@ void CObjectManager::ObjectCollision(int index){
 //Modified Method
 void CObjectManager::CollisionDetection(int index){ 
 
-	float distanceToCheck = 35.0f;
+	float distanceToCheck = 25.0f;//35
 	if(m_spellObjects[index]->m_nObjectType == LINKATK_OBJECT)
-		distanceToCheck = 140.0f;
+		distanceToCheck = 75.0f; //140
 
 	if(m_spellObjects[index]){
 		for(int i=0; i < m_nMaxCount; i++){
@@ -2230,7 +2228,7 @@ void CObjectManager::CollisionDetection(int index){
 							playerDamage = 0; //You can't hurt that which you can't touch!
 						else{
 							mobIsHurt = true;
-							mobHurtTime = g_cTimer.time() + 350;
+							mobHurtTime = g_cTimer.time() + 0;//350
 							m_pObjectList[i]->waitTime = mobHurtTime;
 							mobHurt = new CGameObject(HURT_OBJECT,"hurt",m_pObjectList[i]->m_structLocation,0,0);
 							mobIndex = i;
@@ -2273,103 +2271,7 @@ void CObjectManager::CollisionDetection(int index){
 		}
 	}
 
-	/*
-	if(!cooliding){
-		cooliding = true;
 
-		if(m_spellObjects[index]){ //Does the spell even exist
-
-			bool finished = false; //finished when collision detected
-
-			if(spellTimers[index] < g_cTimer.time()){
-				finished = true;
-				killSpell(index);
-			}
-			if(!finished){
-
-			float distanceCheck = 35.0f;
-
-			if(m_spellObjects[index]->m_nObjectType == LINKATK_OBJECT)
-				distanceCheck = 90.0f;
-
-			for(int i=0; i < m_nMaxCount && !finished; i++){
-				if(m_pObjectList[i]){ //if i is a valid object index
-					if(m_pObjectList[i]->m_bVulnerable && distance(m_spellObjects[index], m_pObjectList[i]) < distanceCheck){
-						finished = true; 
-
-						if(m_pObjectList[i]->m_nObjectType == TREASURE_OBJECT && m_spellObjects[index]->m_nObjectType == LINKATK_OBJECT){
-							//Treasure chest object and opening with a sword attack
-							monsterInfo[i].HP = 0;
-							determineLoot(monsterInfo[i].tClass,monsterInfo[i].LV, m_pObjectList[i]);
-							replace(i);
-						}
-						else{
-
-							int playerDamage = 0; //10 + 4*(LV%3);
-							playerDamage = playerDamageDealt(m_spellObjects[index]->m_nObjectType);
-
-							if(monsterInfo[i].LV - LV >= 3){
-								playerDamage = 0; //You can't hurt that which you can't touch!
-							}
-							else{
-								mobIsHurt = true;
-								mobHurtTime = g_cTimer.time() + 350;
-								m_pObjectList[i]->waitTime = mobHurtTime;
-								mobHurt = new CGameObject(HURT_OBJECT,"hurt",m_pObjectList[i]->m_structLocation,0,0);
-								mobIndex = i;
-							}
-
-							damageDone = playerDamage;
-							monsterInfo[i].HP -= playerDamage; //This will be the spells damage
-
-							if(monsterInfo[i].HP < 0)
-								monsterInfo[i].HP = 0;
-
-							/*for(int c=0;c<monsterAmount;c++){
-								if(monsterHealthBars[c].currentMonster == i && monsterHealthBars[c].show == true){
-									monsterHealthBar(i);
-									c = monsterAmount + 1;
-								}
-							} \/*\/
-
-						//	LV = monsterInfo[i].tClass;
-				
-							if(monsterInfo[i].HP <= 0){
-								//This is where the monster dies
-								determineLoot(monsterInfo[i].tClass,monsterInfo[i].LV, m_pObjectList[i]);
-								if(monsterInfo[i].bossId > 0)
-									dropBossLoot(m_pObjectList[i],monsterInfo[i].bossId);
-
-								if((LV - monsterInfo[i].LV) <= 2){
-									//You can still get XP for lower level mobs up to two levels lower
-									float xpAmount = monsterInfo[i].xp * 1/(LV%(monsterInfo[i].LV + 1)+1);
-									expInc(xpAmount);
-								}
-								replace(i);				
-							}
-						}
-						 //replace object that is hit
-
-						if(m_spellObjects[index])
-							killSpell(index); //kill object doing the hitting
-						collisionCount++;//keeps track of how many times hero has attacked
-					}
-				}
-			}
-
-			}
-
-			if(!finished && m_spellObjects[index]){
-				switch (m_spellObjects[index]->m_nObjectType){
-					case LINKATK_OBJECT: killSpell(index); break;
-				}
-			}
-		}
-		cooliding = false;
-
-	}  /*\///
-	
-	//collisionCount++;*/
 }
 
 /// Draw method for hero
@@ -2442,18 +2344,24 @@ void CObjectManager::DrawTextHeader(){ //draw header with score, lives, etc.
 	*/
 
 	//DrawValue("Health:", HP, 10, 10);
-	DrawValue2("Zone:", zoneName, 10, 10);
-  	DrawValue("LV:", LV, 10, 30);
-	DrawValue("EXP:", XP, 10, 50);
-	DrawValue(" / ", nextXP, 65,50);
-	//DrawValue("Collisions:", collisionCount, 10, 90);
+
+	////////////////////////////////Original Show//////////////////////////////////
+
+
+	//DrawValue2("Zone:", zoneName, 10, 10);
+  	//DrawValue("LV:", LV, 10, 30);
+	//DrawValue("EXP:", XP, 10, 50);
+	//DrawValue(" / ", nextXP, 65,50);
+
+	//DrawValue("Gold:",playerGold,10,70);
+	//DrawValue("Damage Done:", damageDone, 10, 90);
+	////////////////////////////////Original Show//////////////////////////////////
+
+
+		//DrawValue("Collisions:", collisionCount, 10, 90);
 	//DrawValue("Monsters Left:", enemies(), 10, 90);
 	//DrawValue("MainCharXCoord:", v.x, 10, 110);
 	//DrawValue("MainCharYCoord:", v.y, 10, 130);
-	DrawValue("Gold:",playerGold,10,70);
-	DrawValue("Damage Done:", damageDone, 10, 90);
-	DrawValue2("TIP:","Heal Guy will help you!",10,120);
-	DrawValue2("TIP2:","Let him go when he stops!",10,150);
 
 	/*for(int i=0; i<5; i++)
 	{
@@ -3532,7 +3440,7 @@ void CObjectManager::ShowTextBox(){
 
 	if(TalkBubble ){
 		if(menuON == 0){
-			m_textBoxObjects[0] = new CGameObject(TEXTBOX_OBJECT, "textBox", v2, 0, 0);
+			//m_textBoxObjects[0] = new CGameObject(TEXTBOX_OBJECT, "textBox", v2, 0, 0);
 			textBoxON = TRUE;
 			menuON = 1;
 		}	
@@ -3548,16 +3456,21 @@ void CObjectManager::ShowTextBox(){
 void CObjectManager::ShowText(){
 
 	D3DXVECTOR3 v2; //location of hero
-    v2.x = m_pPlayerObject->m_structLocation.x- 445;
-    v2.y = m_pPlayerObject->m_structLocation.y - 180;
-    v2.z = 500.0f;
+    v2.x = m_pPlayerObject->m_structLocation.x - 445;
+    v2.y = m_pPlayerObject->m_structLocation.y + 280; // - 180
+    v2.z = 600.0f; //500
 
-	char* testString = "CAN IT BE CALLED GRAPE?";
+	//add to database of text here
 
-	char* strings[3];
+	char* strings[6];
 	strings[0] = "CAN IT BE CALLED GRAPE?";
 	strings[1] = "HERE IS THE SECOND LINE, PRETTY NEAT HUH?";
 	strings[2] = "THIRD LINE IS NOT AS COOL AS THE FIRST TWO.";
+	strings[3] = "SOME IMPORTANT INFO";
+	strings[4] = "WOOT THE WOOT";
+	strings[5] = "THE THIRD LINE AGAIN";
+
+	//add global int and function for changing text. Replace 3 with global int.
 
 	for(int h = 0; h < 3; h++){	
 		for(int g = 0; g < 50; g++){
@@ -4059,11 +3972,11 @@ void CObjectManager::wait() {
 		playerGold = playerGold/2;
 		HP = totalHP/2;
 		MP = totalMP/2;
-		destroyWorld();
+		//destroyWorld(); //Turned off these to keep same world
 		m_Dead = NULL;
 		spawnX = 0;
 		spawnY = 0;
-		createZone(1);
+		//createZone(1);
 	}
 }
 

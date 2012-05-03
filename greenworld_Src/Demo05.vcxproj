@@ -207,6 +207,7 @@
     <ClInclude Include="Tornado.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="gamesettings.xml">
       <SubType>Designer</SubType>
     </None>

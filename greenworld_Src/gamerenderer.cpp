@@ -111,7 +111,7 @@ void CGameRenderer::LoadTextures(){ //create textures for image storage
 	///Hero
 	g_cSpriteManager.Load(LINK_OBJECT,"link");
 	g_cSpriteManager.Load(LINKATK_OBJECT,"linkATK");
-	//g_cSpriteManager.Load(NPC_OBJECT,"NPC");
+	g_cSpriteManager.Load(NPC_OBJECT,"NPC");
 	//g_cSpriteManager.Load(HEALTH_PIECE,"healthpiece");
 	//g_cSpriteManager.Load(HEALTH_FRAME,"healthframe");
 
@@ -288,10 +288,12 @@ void CGameRenderer::ComposeFrame(){
 		g_cObjectManager.draw();
 
 		if(currentKey > 4){
-			for(VFrameCount = 0; VFrameCount < 6; VFrameCount++){ 
+			//while(VFrameCount < 6){
+			//for(VFrameCount = 0; VFrameCount < 6; VFrameCount++){ 
 				g_cObjectManager.draw2(currentKey-4);
-
-			}
+			//	VFrameCount++;
+			//}
+			//}
 		if(AttackCount)
 			currentKey = currentKey - 4; 
 		VFrameCount = 0;

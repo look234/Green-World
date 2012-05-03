@@ -26,7 +26,8 @@
   <monsters amount = "7" />
   <!--Because I'm Lazy-->
   <!-- <monster id = "1" min="1" max="20" xp="20" lv="1" hp="40" tc="1" x="0" y="0"/>-->
- 
+  <monster id = "5" min="1" max="1" xp="120" lv="7" hp="230" tc="4" x="55" y="55" bossId="1"/>
+
   <!-- Spawns specificly -->
   <objects32 size="1" />
 

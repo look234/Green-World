@@ -130,7 +130,7 @@ void CGameObject::draw(int key){ //draw
   int t = m_nFrameInterval;
   
   if(m_nObjectType != EXPLODINGCROW_OBJECT)
-    t = (int)((float)m_nFrameInterval/(1.5f+fabs(m_fXspeed))); //frame interval
+    t = (int)((float)m_nFrameInterval/(2.0f+fabs(m_fXspeed))); //frame interval
 
   float fOrientation = atan2f(m_fYspeed, 20.0f); //rotation around Z axis
   int testFrame = 0;
@@ -138,16 +138,16 @@ void CGameObject::draw(int key){ //draw
   m_nCurrentFrame = ((key*6) - 6); 
   testFrame = (key*6);
 
-  		if(g_cTimer.elapsed(m_nLastFrameTime, t)) //if enough time passed
+  		if(g_cTimer.elapsed(m_nLastFrameTime, t+10.0f)) //if enough time passed
 			theCount++;
 	switch(theCount){
-	case 0: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 0+m_nCurrentFrame+0);break;
-	case 1: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 1+m_nCurrentFrame+0);break;
-	case 2: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 2+m_nCurrentFrame+0);break;
-	case 3: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 3+m_nCurrentFrame+0);break;
-	case 4: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 4+m_nCurrentFrame+0);break;
-	case 5: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 5+m_nCurrentFrame+0);break;
-	default: theCount = 0;m_nCurrentFrame = (key*6) - 6;g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 0+m_nCurrentFrame);break;
+	case 0: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 0+m_nCurrentFrame);break;
+	case 1: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 1+m_nCurrentFrame);break;
+	case 2: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 2+m_nCurrentFrame);break;
+	case 3: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 3+m_nCurrentFrame);break;
+	case 4: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 4+m_nCurrentFrame);break;
+	case 5: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 5+m_nCurrentFrame);break;
+	default: theCount = 0;m_nCurrentFrame = (key*6) - 6;g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, m_nCurrentFrame);break;
 		}
 
 }
@@ -170,7 +170,7 @@ void CGameObject::draw2(int key){ //draw
 		//takes in the key info from player and converts it to max frames for animation
 		testFrame = (key*6);
 
-	if(g_cTimer.elapsed(m_nLastFrameTime, t)) //if enough time passed
+	if(g_cTimer.elapsed(m_nLastFrameTime, t+10.0f)) //if enough time passed
 			theCount++;
 	if(++m_nCurrentFrame >= testFrame) 
 		m_nCurrentFrame = (key*6) - 6;
@@ -184,6 +184,7 @@ void CGameObject::draw2(int key){ //draw
 	case 5: g_cSpriteManager.Draw(LINK_OBJECT, m_structLocation, fOrientation, 5+m_nCurrentFrame+23);break;
 	default: m_nCurrentFrame = 0; testFrame = 0; theCount = 0; AttackCount = TRUE; break;
 	}
+
 }
 
 void CGameObject::draw(char letter){ //draw

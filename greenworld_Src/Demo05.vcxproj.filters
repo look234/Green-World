@@ -237,5 +237,6 @@
     <None Include="zone4.xml">
       <Filter>XML files</Filter>
     </None>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

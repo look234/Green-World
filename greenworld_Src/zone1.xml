@@ -42,12 +42,6 @@
   <!-- Spawns specificly -->
   <objects32 size="2" />
  <!-- <object32 type="1" x="-500" y="2700" /> -->
-  <object32 type="2" x="0" y="0" />
-  <object32 type="2" x="40" y="40" />
-  <object32 type="2" x="50" y="50" />
-  <object32 type="2" x="60" y="60" />
-  <object32 type="2" x="70" y="50" />
-  <object32 type="2" x="80" y="40" />
 
   <objects64 size="1" />
   <!--<object64 type="0" x="104" y="30"/>-->

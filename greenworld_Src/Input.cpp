@@ -343,9 +343,9 @@ case DIK_1 :	if(!MenuUp){if(g_cObjectManager.LV >= 2){  g_pSoundManager->play(DE
 case DIK_2 :	if(!MenuUp){if(g_cObjectManager.LV >= 3){   g_pSoundManager->play(DEADCROW12_SOUND);g_cObjectManager.Lightning(theKey);} }break;
 case DIK_3 :	if(!MenuUp){if(g_cObjectManager.LV >= 4){g_cObjectManager.Barrier(theKey);} }break;
 case DIK_4 :	if(!MenuUp){if(g_cObjectManager.LV >= 5){g_cObjectManager.FanofFire();} }break;
-case DIK_M :  g_cObjectManager.MenuYes(); break;
-case DIK_V : g_cObjectManager.useItem(currentItemSelect); break;
-case DIK_S: g_cObjectManager.saveGame(); break;
+case DIK_M :    g_cObjectManager.MenuYes(); break;
+case DIK_V :    g_cObjectManager.useItem(currentItemSelect); break;
+case DIK_S:     g_cObjectManager.saveGame(); break;
 
 /*case DIK_F3: g_cObjectManager.useItem(0); break;
 case DIK_F4: g_cObjectManager.useItem(1); break;

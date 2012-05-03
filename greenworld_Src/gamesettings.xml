@@ -24,7 +24,7 @@
 	<sprites>
     <!-- Hero -->
     <sprite name="link" file="Images\\hero" ext="png" frames="48" />
-    <sprite name="linkATK" file="Images\\linkATK" ext="png" frames="1" />
+    <sprite name="linkATK" file="Images\\heroATK" ext="png" frames="1" />
     <sprite name="NPC" file="Images\\NPC" ext="png" frames="3" />
     
    <!-- <sprite name="healthpiece" file="Images\\healthpiece" ext="png" frames="1" />
@@ -48,7 +48,7 @@
     <sprite name="explodingmonster" file="Images\\monsters\\monster\\monsterexA" ext="png" frames="2" />
     <sprite name="deadmonster" file="Images\\monsters\\monster\\monsterdeadA" ext="png" frames="4" />
 
-    <sprite name="healguy" file="Images\\link" ext="png" frames="16"/>
+    <sprite name="healguy" file="Images\\skull" ext="png" frames="3"/>
     
     
     
@@ -204,7 +204,7 @@
       vulnerable="0"
       fly="1"
       cycle="1"
-      animation="0,1,2,1"
+      animation="0,1,2"
 		/>
 
     <object name="healthpiece"
@@ -264,7 +264,7 @@
 			vulnerable="1"
 			fly="1"
 			cycle="1"
-			animation="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+			animation="0,1,2"
 		/>
     <!--+++++++++++++++Monster+++++++++++++++-->
     <object name="monster"

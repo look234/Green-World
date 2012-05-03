@@ -8,7 +8,7 @@ extern CTimer g_cTimer;  //game timer
 extern CRandom g_cRandom; //random number generator
 extern CSoundManager* g_pSoundManager;
 D3DXVECTOR3 cool;
-const int CLOSE_DISTANCE=225; ///< Distance for close to plane
+const int CLOSE_DISTANCE=90; ///< Distance for close to plane
 const int FAR_DISTANCE=500; ///< Distance for "far from" plane.
 const int FALLBACK_DISTANCE=150; ///< Fall back at this vertical distance from plane
 const int BEHIND_DISTANCE=-5; ///< Horizontal distance considered to be behind plane
@@ -159,17 +159,17 @@ void CHealGuyObject::ChasingAi()
 	
 	}
 	
-	 if(m_fHorizontalDistance-150 < -10)
+	 if(m_fHorizontalDistance-50 < -10)
 	{
 		m_fXspeed = 30;
 
 	}
-	if(m_fVerticalDistance+150 > 10)
+	if(m_fVerticalDistance > 10)
 	{
 		m_fYspeed = 30;
 		
 	}
-	if(m_fVerticalDistance+150 < -10)
+	if(m_fVerticalDistance < -10)
 	{
 		m_fYspeed = -30;
 	
@@ -180,9 +180,7 @@ void CHealGuyObject::ChasingAi()
 		//if(m_fDistance < CLOSE_DISTANCE){
 		//g_pSoundManager->play(DEADCROW14_SOUND);
 		//SetState(herCHASINGS3_STATE);}
-	if(m_fDistance > CLOSE_DISTANCE+100){
-		//g_pSoundManager->play(DEADCROW14_SOUND);
-		SetState(herCRUISINGS3_STATE);}
+	
 	
 }
 

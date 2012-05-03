@@ -33,8 +33,7 @@
   <monster id = "2" min="5" max="5" xp="100" lv="6" hp="180" tc="3" x="0" y="0"/>
   <monster id = "3" min="4" max="7" xp="90" lv="5" hp="160" tc="3" x="0" y="0"/>
   <monster id = "3" min="4" max="7" xp="100" lv="6" hp="180" tc="3" x="0" y="0"/>
-  <monster id = "5" min="4" max="7" xp="90" lv="5" hp="160" tc="3" x="0" y="0"/>
-  <monster id = "5" min="4" max="7" xp="100" lv="6" hp="180" tc="3" x="0" y="0"/>
+
   <monster id = "7" min="1" max="4" xp="0" lv="5" hp="1" tc="3" x="0" y="0"/>
 
   <!-- Spawns specificly -->

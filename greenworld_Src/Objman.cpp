@@ -43,8 +43,10 @@ int itemsMenuON = 0;
 int spellsMenuON = 0;
 int optionsMenuON = 0;
 int baseValue = 0;
-int HealMana = 10;
+int HealMana = 900;
+int curHP;
 extern int currentItemSelect;
+
 
 CObjectManager::CObjectManager(){ //constructor 
 
@@ -2115,18 +2117,22 @@ void CObjectManager::MonsterDetection(){
 
 										case HEALGUY_OBJECT:{
 											if(HealMana>=1){
-						if(distance(m_pObjectList[i], m_pPlayerObject) < 125.0f){ //distance to hurt player
+						if(distance(m_pObjectList[i], m_pPlayerObject) < 225.0f){ //distance to hurt player
 							playerIsHit = true;
-							mobMeleeDamage = g_cRandom.number(monsterInfo[i].LV,monsterInfo[i].LV+3);
-							mobMeleeDamage = -4*mobMeleeDamage;
-							HealMana--;
+							mobMeleeDamage =2;
+							if (HP<.5*totalHP){mobMeleeDamage = -10*mobMeleeDamage;HealMana-=50;}
+							if(HP>.5*totalHP){mobMeleeDamage = -5*mobMeleeDamage;HealMana-=5;}
+							if(HP==totalHP){mobMeleeDamage = 0*mobMeleeDamage;}
+							//HealMana--;
+
 						}
-						else
+				
+
+					}
+																	else
 						{
 							mobMeleeDamage = 0;
 						}
-
-					}
 					break;
 					}
 
@@ -2446,6 +2452,8 @@ void CObjectManager::DrawTextHeader(){ //draw header with score, lives, etc.
 	//DrawValue("MainCharYCoord:", v.y, 10, 130);
 	DrawValue("Gold:",playerGold,10,70);
 	DrawValue("Damage Done:", damageDone, 10, 90);
+	DrawValue2("TIP:","Heal Guy will help you!",10,120);
+	DrawValue2("TIP2:","Let him go when he stops!",10,150);
 
 	/*for(int i=0; i<5; i++)
 	{

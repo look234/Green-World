@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <settings>
-    <charInformation totalHP="500" HP="236" totalMP="500" MP="500" XP="170" LV="1" playerGold="12" />
+    <charInformation totalHP="500" HP="228" totalMP="500" MP="500" XP="170" LV="1" playerGold="12" />
     <inventory>
         <item slot="0" id="1" title="A Weak Potion of Healing" name="potion1" type="2" itemType="pot" stack="4" maxStack="20" amount="50" />
     </inventory>

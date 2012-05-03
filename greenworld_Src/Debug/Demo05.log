@@ -1,7 +1,7 @@
-﻿Build started 4/30/2012 1:07:38 AM.
+﻿Build started 5/3/2012 2:04:03 AM.
      1>Project "C:\Users\Michael\Desktop\GreenWorld\Soft-Dev2\greenworld_Src\Demo05.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating ".\Debug\Demo05.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching ".\Debug\Demo05.unsuccessfulbuild".
        ClCompile:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo- /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D D3D_DEBUG_INFO /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTCc /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Objman.cpp
          Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 16.00.30319.01 for 80x86
@@ -12,48 +12,55 @@
          
          Objman.cpp
      1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\sprite.h(26): warning C4324: 'C3DSprite' : structure was padded due to __declspec(align())
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(101): warning C4189: 'exitInfo' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(336): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(103): warning C4189: 'exitInfo' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(338): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(493): warning C4189: 'inAnotherObject' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(538): warning C4189: 'inAnotherObject' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(654): warning C4189: 'temp' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(757): warning C4065: switch statement contains 'default' but no 'case' labels
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(864): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(879): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1251): warning C4189: 'healthBarsToDraw' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1526): warning C4100: 'move' : unreferenced formal parameter
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1537): warning C4100: 'move' : unreferenced formal parameter
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1549): warning C4100: 'move' : unreferenced formal parameter
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1561): warning C4100: 'move' : unreferenced formal parameter
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2012): warning C4189: 'yspeed' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2011): warning C4189: 'xspeed' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2198): warning C4100: 'index' : unreferenced formal parameter
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2249): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2654): warning C4100: 'mLevel' : unreferenced formal parameter
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2664): warning C4189: 'itemsThatMatch' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2798): warning C4189: 'itemsThatMatch' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2908): warning C4189: 'objStack' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3194): warning C4305: '=' : truncation from 'int' to 'char'
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3194): warning C4309: '=' : truncation of constant value
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3195): warning C4305: '=' : truncation from 'int' to 'char'
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3195): warning C4309: '=' : truncation of constant value
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3196): warning C4305: '=' : truncation from 'int' to 'char'
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3196): warning C4309: '=' : truncation of constant value
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3547): warning C4189: 'testString' : local variable is initialized but not referenced
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3612): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3854): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3855): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3892): warning C4100: 'level' : unreferenced formal parameter
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3944): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(495): warning C4189: 'inAnotherObject' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(540): warning C4189: 'inAnotherObject' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(656): warning C4189: 'temp' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(759): warning C4065: switch statement contains 'default' but no 'case' labels
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(866): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(881): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1253): warning C4189: 'healthBarsToDraw' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1528): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1539): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1551): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(1563): warning C4100: 'move' : unreferenced formal parameter
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2014): warning C4189: 'yspeed' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2013): warning C4189: 'xspeed' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2204): warning C4100: 'index' : unreferenced formal parameter
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2255): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2662): warning C4100: 'mLevel' : unreferenced formal parameter
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2672): warning C4189: 'itemsThatMatch' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2806): warning C4189: 'itemsThatMatch' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(2916): warning C4189: 'objStack' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3202): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3202): warning C4309: '=' : truncation of constant value
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3203): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3203): warning C4309: '=' : truncation of constant value
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3204): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3204): warning C4309: '=' : truncation of constant value
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3555): warning C4189: 'testString' : local variable is initialized but not referenced
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3620): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3862): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3863): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3900): warning C4100: 'level' : unreferenced formal parameter
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3952): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3950): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3958): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3956): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(3964): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(4040): warning C4100: 'wait' : unreferenced formal parameter
-     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(4087): warning C4100: 'spellId' : unreferenced formal parameter
-         All outputs are up-to-date.
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(4048): warning C4100: 'wait' : unreferenced formal parameter
+     1>c:\users\michael\desktop\greenworld\soft-dev2\greenworld_src\objman.cpp(4095): warning C4100: 'spellId' : unreferenced formal parameter
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo- /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D D3D_DEBUG_INFO /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTCc /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 16.00.30319.01 for 80x86
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         cl /c /ZI /nologo- /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D D3D_DEBUG_INFO /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTCc /MTd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+     1>cl : Command line warning D9035: option 'nologo-' has been deprecated and will be removed in a future release
+         
+         Main.cpp
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -105,4 +112,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.42
+Time Elapsed 00:00:02.47
